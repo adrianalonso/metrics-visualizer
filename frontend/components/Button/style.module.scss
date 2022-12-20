@@ -1,0 +1,21 @@
+@import "../../styles/vars.scss";
+
+.button {
+  background: transparent;
+  border-color: $color-grey;
+
+  border-radius: 1em;
+  border-style: solid;
+  padding: 0.3em 1.5em;
+  outline: 0;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+
+  &.--enabled {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}

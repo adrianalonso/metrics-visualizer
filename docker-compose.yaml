@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086"
+    volumes:
+      - data_influxdb:/var/lib/influxdb
+      - ./data:/home/influxdb
+    environment:
+      - INFLUXDB_DB=db0
+      - TZ="Europe/Madrid"
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUX_DB_USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_DB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUX_DB_ORG}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUX_DB_BUCKET}
+      - DOCKER_INFLUXDB_INIT_RETENTION=365d
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=s3cr3t
+
+volumes:
+  data_influxdb:

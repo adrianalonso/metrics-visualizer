@@ -1,0 +1,44 @@
+@import "../../styles/vars.scss";
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+
+  svg {
+    margin-right: 0.5em;
+    margin-left: -0.5em;
+    max-width: 2em;
+    color: $color-primary;
+  }
+  h1 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+}
+
+.description {
+  font-size: 1em;
+  max-width: 300px;
+  margin: 0 0 2em 0;
+  text-align: justify;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -1em;
+    left: 0;
+    width: 1em;
+    height: 3px;
+    background-color: $color-primary;
+  }
+}
+
+.icon {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(320deg);
+  max-width: 40px;
+}
